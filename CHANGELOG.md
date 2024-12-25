@@ -4,6 +4,8 @@
 ### [0.0.3] - 2024-12-25
 
 ### Added
+- Section Fonctionnalités
+- Section FAQ
 - Gestion du profil
 - Recherche des objets
 - Gestion des objets

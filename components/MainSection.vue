@@ -5,7 +5,7 @@
       <p class="mt-7 text-xl font-medium">L'outil qui vous permet de gérer vos objets de manière facile.</p>
 
       <div class="flex gap-4 mt-16">
-        <NuxtLink to="/signin" class="bg-[#94543d] text-white font-semibold rounded-xl py-2 px-4 transition ease-in-out duration-300 hover:bg-[#94543d]/80 flex items-center">Se connecter <Icon name="fe:arrow-right" class="ml-2" /></NuxtLink>
+        <NuxtLink to="/signup" class="bg-[#94543d] text-white font-semibold rounded-xl py-2 px-4 transition ease-in-out duration-300 hover:bg-[#94543d]/80 flex items-center">Démarrer <Icon name="fe:arrow-right" class="ml-2" /></NuxtLink>
       </div>
     </div>
 
