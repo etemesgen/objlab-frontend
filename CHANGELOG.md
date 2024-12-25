@@ -4,6 +4,8 @@
 ### [0.0.3] - 2024-12-25
 
 ### Added
+- Ajout de la page de gestion des objets
+  - Create object
 - Gestion de l'authentification avec localStorage
 - Ajout des pages de connexion/inscription
 - Ajout de la page d'accueil
