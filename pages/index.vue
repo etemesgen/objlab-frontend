@@ -9,9 +9,3 @@
 import Navbar from '../components/NavBar.vue';
 import MainSection from '../components/MainSection.vue';
 </script>
-
-<style>
-body {
-  font-family: 'Baloo 2', sans-serif;
-}
-</style>

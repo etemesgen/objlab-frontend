@@ -2,10 +2,16 @@
 
 
 ### [0.0.3] - 2024-12-25
+
+### Added
+- Gestion de l'authentification avec localStorage
+- Ajout des pages de connexion/inscription
 - Ajout de la page d'accueil
 
 
 ### [0.0.2] - 2024-12-24
+
+### Added
 - Configuration de TailwindCSS
 
 
