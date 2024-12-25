@@ -35,6 +35,7 @@
 </template>
 
 <script setup lang="ts">
+import { handleObjectAction } from '~/composables/objects/handleObjectAction';
 import { handleDeleteObject } from '~/composables/objects/handleDeleteObject';
 
 const toast = useToast()

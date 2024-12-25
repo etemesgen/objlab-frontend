@@ -33,9 +33,9 @@
         </div>
 
         <div class="flex gap-4 pt-5">
-          <button class="bg-[#94543d] text-white text-sm font-semibold rounded-xl py-2 px-6 transition ease-in-out duration-300 hover:bg-[#94543d]/80 flex items-center">Modifier</button>
-          <button class="bg-red-500 text-white text-sm font-semibold rounded-xl py-2 px-6 transition ease-in-out duration-300 hover:bg-red-300 flex items-center" :disabled="isLoading" @click="handleDelete(user?._id)">
-            <Icon v-if="isLoading" name="eos-icons:loading" class="animate-spin mr-2 mb-1 w-5 h-5" />Supprimer
+          <button class="bg-[#94543d] text-white text-sm font-semibold rounded-xl py-2 px-6 transition ease-in-out duration-300 hover:bg-[#94543d]/80 flex items-center" :disabled="isLoadingUpdate"><Icon v-if="isLoadingUpdate" name="eos-icons:loading" class="animate-spin mr-2 mb-1 w-5 h-5" />Modifier</button>
+          <button class="bg-red-500 text-white text-sm font-semibold rounded-xl py-2 px-6 transition ease-in-out duration-300 hover:bg-red-300 flex items-center" :disabled="isLoadingDelete" @click="handleDelete(user?._id)">
+            <Icon v-if="isLoadingDelete" name="eos-icons:loading" class="animate-spin mr-2 mb-1 w-5 h-5" />Supprimer
           </button>
         </div>
       </form>
@@ -52,7 +52,8 @@ const user = ref({ _id: '', name: '', email: '', password: '' })
 const config = useRuntimeConfig()
 const toast = useToast()
 const hidePassword = ref(true)
-const isLoading = ref(false)
+const isLoadingUpdate = ref(false)
+const isLoadingDelete = ref(false)
 
 function signOut() {
   localStorage.removeItem('user')
@@ -65,7 +66,7 @@ function handlePasswordVisibility() {
 }
 
 async function handleUpdate(id: any, event: Event) {
-  isLoading.value = true
+  isLoadingUpdate.value = true
   await handleEditProfil(
     id,
     event,
@@ -73,19 +74,19 @@ async function handleUpdate(id: any, event: Event) {
     toast
   ).then(() => {
     localStorage.setItem('user', JSON.stringify(user.value))
-    isLoading.value = false
+    isLoadingUpdate.value = false
   }).catch(() => {
-    isLoading.value = false
+    isLoadingUpdate.value = false
   })
 }
 
 async function handleDelete(id: any) {
-  isLoading.value = true
+  isLoadingDelete.value = true
   await handleDeleteProfil(id, config.public.API_URL, toast)
   .then(() => {
     signOut()      
   }).catch(() => {
-    isLoading.value = false
+    isLoadingDelete.value = false
   })
 }
 

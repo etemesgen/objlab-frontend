@@ -27,7 +27,7 @@
     </div>
 
     <div class="mt-10 grid grid-cols-3 gap-10" v-if="filteredObjects.length > 0 && !isLoading">
-      <div v-for="object in filteredObjects" :key="object.id">
+      <div v-for="object in filteredObjects" :key="object._id">
         <ObjectCard :object="object" :fetchObjects="handleFetchObjects" />
       </div>
     </div>
@@ -57,7 +57,7 @@ const toast = useToast()
 const search = ref('')
 
 const filteredObjects = computed(() => {
-  return objects.value.filter((object: any) => 
+  return objects && objects.value.filter((object: any) => 
     object.name && object.name.toLowerCase().includes(search.value.toLowerCase())
   )
 })

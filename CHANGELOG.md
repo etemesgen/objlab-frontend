@@ -18,6 +18,9 @@
 ### Changed
 - Refactorisation des composables
 
+### Fixed
+- Erreur lors de la recherche des objets
+
 
 ### [0.0.2] - 2024-12-24
 
