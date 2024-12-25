@@ -1,10 +1,14 @@
 <template>
-  <div class="p-10">
-    <Navbar />
+  <div class="p-5 md:p-10">
+    <div class="mt-10 md:mt-0">
+      <Navbar />
+    </div>
     
-    <MainSection />
+    <div class="mt-16 md:mt-32">
+      <MainSection />
+    </div>
 
-    <div class="mt-32 flex gap-8">
+    <div id="features" class="mt-32 flex flex-col md:flex-row gap-8">
       <FeatureCard 
         :icon="'i-heroicons-archive-box'" 
         title="Gestion des objets" 
@@ -27,7 +31,7 @@
       />
     </div>
 
-    <div class="mt-32">
+    <div id="faq" class="mt-32">
       <Faq />
     </div>
   </div>

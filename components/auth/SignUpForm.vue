@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto w-1/2 mt-10">
+  <div class="mx-auto w-[80%] md:w-1/2 md:mt-10">
     <img src="~/assets/objlab_logo.png" alt="objlab" class="w-56 cursor-pointer" @click="$router.push('/')">
     <h1 class="text-3xl font-bold leading-normal bg-gradient-to-r from-[#94543d] to-[#e2ad74] to-50% bg-clip-text text-transparent">Bienvenue !</h1>
 

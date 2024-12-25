@@ -21,5 +21,5 @@ const faqs = [
 </script>
 
 <template>
-  <UAccordion id="faq" :items="faqs" color="gray" size="xl" variant="soft" />
+  <UAccordion :items="faqs" color="gray" size="xl" variant="soft" />
 </template>

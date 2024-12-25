@@ -28,7 +28,7 @@
 
       <div class="flex items-center gap-4" v-if="type === 'edit'">
         <button type="submit" class="w-full bg-[#e2ad74] text-white font-semibold rounded-lg py-2 px-4 transition ease-in-out duration-300 hover:bg-[#e2ad74]/80 flex items-center justify-center">Modifier</button>
-        <button class="w-full bg-red-500 text-white font-semibold rounded-lg py-2 px-4 transition ease-in-out duration-300 hover:bg-red-300 flex items-center justify-center" @click="deleteObject(object && object._id)">Supprimer</button>
+        <button type="button" class="w-full bg-red-500 text-white font-semibold rounded-lg py-2 px-4 transition ease-in-out duration-300 hover:bg-red-300 flex items-center justify-center" @click="deleteObject(object && object._id)">Supprimer</button>
       </div>
     </form>
   </div>

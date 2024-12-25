@@ -4,6 +4,7 @@
 ### [0.0.3] - 2024-12-25
 
 ### Added
+- Responsive design
 - Section Fonctionnalités
 - Section FAQ
 - Gestion du profil
