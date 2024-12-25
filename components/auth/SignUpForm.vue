@@ -40,6 +40,8 @@
 </template>
 
 <script setup lang="ts">
+import handleSignup from '~/composables/auth/handleSignUp';
+
 const toast = useToast()
 const hidePassword = ref(true)
 const hideConfirmPassword = ref(true)
@@ -78,9 +80,7 @@ function confirmPassword(event: Event) {
   }
 }
 
-async function handleUserSignup(event: Event) {
-  isLoading.value = true
-
+function handleUserSignup(event: Event) {
   if (passwordDoesNotMatch.value) {
     toast.add({
       title: 'Erreur',
@@ -91,16 +91,12 @@ async function handleUserSignup(event: Event) {
     return;
   }
 
-  const formData = new FormData(event.target as HTMLFormElement);
-  const data = Object.fromEntries(formData);
+  isLoading.value = true
 
-  await $fetch(config.public.API_URL + '/api/v1/users', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  }).then(() => {
+  handleSignup(
+    event,
+    config.public.API_URL,
+  ).then(() => {
     isLoading.value = false
     navigateTo('/signin')
   }).catch(() => {
@@ -111,6 +107,6 @@ async function handleUserSignup(event: Event) {
       icon: 'i-heroicons-x-circle',
       color: 'gray'
     })
-  })
+  });
 }
 </script>

@@ -4,11 +4,18 @@
 ### [0.0.3] - 2024-12-25
 
 ### Added
+- Recherche des objets
 - Ajout de la page de gestion des objets
-  - Create object
+  - Afficher
+  - Créer objet
+  - Modifier objet
+  - Supprimer objet
 - Gestion de l'authentification avec localStorage
 - Ajout des pages de connexion/inscription
 - Ajout de la page d'accueil
+
+### Changed
+- Refactorisation des composables
 
 
 ### [0.0.2] - 2024-12-24

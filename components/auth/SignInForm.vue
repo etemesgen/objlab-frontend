@@ -25,6 +25,8 @@
 </template>
 
 <script setup lang="ts">
+import handleSignIn from '~/composables/auth/handleSignIn';
+
 const toast = useToast()
 const hidePassword = ref(true)
 const config = useRuntimeConfig()
@@ -35,30 +37,16 @@ function handlePasswordVisibility() {
   passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
 }
 
-async function handleUserSignin(event: Event) {
-  const formData = new FormData(event.target as HTMLFormElement);
-  const data = Object.fromEntries(formData);
-
+function handleUserSignin(event: Event) {
   isLoading.value = true
-
-  await $fetch(config.public.API_URL + '/api/v1/auth/signin', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  }).then((response: any) => {
+  handleSignIn(
+    event,
+    config.public.API_URL,
+    toast
+  ).then(() => {
     isLoading.value = false
-    localStorage.setItem('user', JSON.stringify(response.authenticatedUser))
-    navigateTo('/dashboard')
   }).catch(() => {
     isLoading.value = false
-    toast.add({
-      title: 'Erreur',
-      description: 'Email ou mot de passe incorrect',
-      icon: 'i-heroicons-x-circle',
-      color: 'gray'
-    })
-  })
+  });
 }
 </script>
