@@ -16,7 +16,7 @@ export default async function handleUserSignin(event: Event, apiUrl: any, toast:
       title: 'Erreur',
       description: 'Email ou mot de passe incorrect',
       icon: 'i-heroicons-x-circle',
-      color: 'gray'
+      color: 'red'
     })
   });
 }

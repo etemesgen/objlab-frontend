@@ -4,8 +4,9 @@
 ### [0.0.3] - 2024-12-25
 
 ### Added
+- Gestion du profil
 - Recherche des objets
-- Ajout de la page de gestion des objets
+- Gestion des objets
   - Afficher
   - Créer objet
   - Modifier objet

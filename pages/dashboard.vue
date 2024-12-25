@@ -1,15 +1,17 @@
 <template>
   <div class="flex flex-col m-24">
     <div class="flex justify-between items-baseline">
-      <h1 class="text-3xl font-medium leading-normal"><span class="bg-gradient-to-r from-[#94543d] to-[#e2ad74] to-50% bg-clip-text text-transparent">Salut,</span> {{ userName }} 👋 </h1>
+      <h1 class="text-3xl font-medium leading-normal">
+        <span class="bg-gradient-to-r from-[#94543d] to-[#e2ad74] to-50% bg-clip-text text-transparent">Salut,</span> {{ userName }} 👋 
+      </h1>
       <div class="flex gap-10 pt-5 items-center">
-        <Icon name="lucide:circle-user-round" class="w-6 h-6 cursor-pointer transition ease-in-out duration-300 hover:scale-110" />
+        <Icon name="lucide:circle-user-round" class="w-6 h-6 cursor-pointer transition ease-in-out duration-300 hover:scale-110" @click="$router.push('/profil')" />
         <Icon name="lucide:log-out" class="w-6 h-6 cursor-pointer transition ease-in-out duration-300 hover:scale-110" @click="signOut" />
       </div>
     </div>
 
     <div class="mt-10 flex justify-between items-center">
-      <h2 class="text-2xl font-medium leading-normal bg-gradient-to-r from-[#94543d] to-[#e2ad74] to-50% bg-clip-text text-transparent">Mes objets</h2>
+      <h2 class="text-2xl font-medium leading-normal bg-gradient-to-r from-[#94543d] to-[#e2ad74] to-50% bg-clip-text text-transparent">Liste des objets</h2>
       
       <div class="w-1/2 flex gap-4">
         <button class="bg-[#94543d] text-white text-sm font-semibold rounded-xl py-2 px-6 transition ease-in-out duration-300 hover:bg-[#94543d]/80 flex items-center" @click="isOpen = true"><Icon name="lucide:plus" class="mr-2 w-5 h-5" />Ajouter</button>
@@ -44,7 +46,7 @@
 <script setup lang="ts">
 import ObjectCard from '~/components/dashboard/ObjectCard.vue'
 import ObjectForm from '~/components/dashboard/ObjectForm.vue'
-import fetchObjects from '~/composables/fetchObjects'
+import fetchObjects from '~/composables/objects/fetchObjects'
 
 const userName = ref('')
 const config = useRuntimeConfig()

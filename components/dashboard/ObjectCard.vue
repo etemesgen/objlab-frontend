@@ -30,7 +30,7 @@
 
 <script setup lang="ts">
 import ObjectForm from './ObjectForm.vue';
-import { handleDeleteObject } from '~/composables/handleDeleteObject';
+import { handleDeleteObject } from '~/composables/objects/handleDeleteObject';
 
 const isOpen = ref(false);
 const isOpenDelete = ref(false);
